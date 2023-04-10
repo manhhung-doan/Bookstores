@@ -1,15 +1,15 @@
 {% extends '_base.html' %}
 
 {%block content%}
-    {% comment %} {% for post in post_list %}
-        <div class='p_entry'>
-            <a href='#'><span>{{ post.author}}</span></a>
-            <a href='{% url "post_detail" post.pk %}' ><h3>{{ post.title}}</h3></a>
-            <p>{{ post.body}}</p>
-            <a href='{% url "post_update" post.pk %}'>Update</a>
-        </div>
-    {%endfor%} {% endcomment %}
     <h1>Homepage</h1>
+    {% if user.is_authenticated %}
+        <p>
+            Bonjour {{ user.email }}!
+            <span><a href="{% url 'logout' %}">Se déconnecter</a></span>
+        </p>
+    {% else %}
+        <p>Vous n'êtes pas connecté! <span><a href="{% url 'login' %}">Se connecter</a></span><p>
+    {% endif %}
 {%endblock content%}
 
 
