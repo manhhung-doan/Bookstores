@@ -8,7 +8,12 @@
             <span><a href="{% url 'logout' %}">Se déconnecter</a></span>
         </p>
     {% else %}
-        <p>Vous n'êtes pas connecté! <span><a href="{% url 'login' %}">Se connecter</a></span><p>
+        <p>
+            Vous n'êtes pas connecté!
+            <span><a href="{% url 'login' %}">Se connecter</a></span>
+            ou
+            <span><a href="{% url 'signup' %}">S'inscrire</a></span>
+        </p>
     {% endif %}
 {%endblock content%}
 
