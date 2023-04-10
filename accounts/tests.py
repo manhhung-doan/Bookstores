@@ -69,4 +69,3 @@ class HomepageTests(TestCase):
     def test_homepage_url_resolves_homepageview(self):
         view = resolve('/accounts/signup/')
         self.assertEqual(view.func.__name__, SignupCreateView.as_view().__name__)
-
